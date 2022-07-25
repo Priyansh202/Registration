@@ -1,0 +1,52 @@
+<!DOCTYPE html> 
+
+<html>  
+   <head> 
+      <meta charset = "utf-8"> 
+      <title>signup</title> 
+   </head> 
+  
+   <body> 
+      {% for message in messages %}
+      <div class="alert-alert-{{message.tags}} alert-dismissible fade show" role="alert">
+      <strong>message:</strong>{{ message }}
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+      </button>
+     </div>
+     {% endfor %}
+      <h1>sign up for patients</h1> 
+      <form action="/signup " method="post">
+      {% csrf_token %}
+         <label for="">Username</label>
+         <input type="text" id="username"name="username" placeholder="create username"  Required>
+         <label for="">Firstname</label>
+         <input type="text" id="fname"name="fname" placeholder="firstname"  Required>
+         <label for="">Lastname</label>
+         <input type="text" id="lname"name="lname" placeholder="Last name"  Required>
+         <label for="">email</label>
+         <input type="email" id="email"name="email" placeholder="email address"  Required>
+         <label for="">Password</label>
+         <input type="password" id="pass1"name="pass1" placeholder="create password"  Required>
+         <label for="">Confirm password</label>
+         <input type="password" id="pass2"name="pass2" placeholder="confirm password"  Required>
+         <label for="">address</label>
+         <input type="text" id="add"name="ad" placeholder="address"  Required>
+         <label for="">state</label>
+         <input type="text" id="st"name="st" placeholder="state"  Required>
+         <label for="">District</label>
+         <input type="text" id="di"name="di" placeholder="District"  Required>
+         <label for="">Pincode</label>
+         <input type="number" id="pi"name="pi" placeholder="00000"  Required>
+         <br>
+         
+         <button type="submit">sign up</button>
+         <br>
+      
+      </form>  
+      
+
+      
+
+   </body> 
+</html> 
